@@ -1,0 +1,43 @@
+PART 2 — PREDICTIVE MODELING REPORT
+==========================================
+
+Problem:
+Predict whether a retail order will be profitable.
+
+Target:
+Profitable = 1 when Profit > 0
+Profitable = 0 otherwise
+
+Dataset:
+Retail sales dataset
+
+Train/Test split:
+80% training
+20% testing
+
+Models tested:
+1. Logistic Regression
+2. Decision Tree
+3. Random Forest
+
+Best model:
+Logistic Regression
+
+MODEL RESULTS
+------------------------------------------
+              Model  Accuracy  Precision   Recall  F1_Score  ROC_AUC
+Logistic Regression    0.9125   0.944162 0.948980  0.946565 0.959879
+      Random Forest    0.9125   0.935323 0.959184  0.947103 0.945501
+      Decision Tree    0.9125   0.962963 0.928571  0.945455 0.901670
+
+Important modeling decision:
+The Profit column was removed from the model features because
+Profit directly determines the Profitable target. Keeping it would
+cause target leakage and produce an unrealistic model.
+
+Generated files:
+- models/best_model.pkl
+- results/model_comparison.csv
+- visualizations/confusion_matrix.png
+- visualizations/roc_curve_comparison.png
+- visualizations/model_performance.png
